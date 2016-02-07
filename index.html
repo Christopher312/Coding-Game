@@ -80,7 +80,8 @@
                 {
                   // Logged into your app and Facebook.
                   testAPI();
-                  window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
+                  console.log('is it being reached')
+                  // window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
                 } 
                 else if (response.status === 'not_authorized') 
                 {
@@ -150,7 +151,6 @@
                   contentType: 'application/json;charset=UTF-8',
               });
               document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-             console.log("hi...");
              window.location.href = "https://christopher312.github.io/Coding-Game/access/home.html";
             });
           }
