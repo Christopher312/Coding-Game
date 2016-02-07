@@ -1,12 +1,13 @@
-MONGODB_URI = 'mongodb://heroku_mkt3h9sk:heirlr5tqt4cchtstvsld3di12@ds059185.mongolab.com:59185/heroku_mkt3h9sk' 
+#MONGODB_URI = 'mongodb://heroku_mkt3h9sk:heirlr5tqt4cchtstvsld3di12@ds059185.mongolab.com:59185/heroku_mkt3h9sk' 
 
 from pymongo import MongoClient
-client = MongoClient(MONGOLAB_URI)
+#client = MongoClient(MONGODB_URI)
+client = MongoClient()
 db = client.codemon
 users = db.users
 
 def userExists(email):
-    return users.find({"email": email}).count > 0
+    return users.find({"email": email}).count() > 0
 
 def insertUser(email):
     users.insert(
