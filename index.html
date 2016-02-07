@@ -38,6 +38,15 @@
                 function onSignIn(googleUser) {
                     // Useful data for your client-side scripts:
                     var profile = googleUser.getBasicProfile();
+                    $.ajax({
+                        url: ip+'/_login',
+                        type: 'POST',
+                        data:JSON.stringify({
+                            email: profile.getEmail(),
+                            username: profile.getName()
+                            }),        
+                            contentType: 'application/json;charset=UTF-8',
+                    });
                     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
                     console.log("Name: " + profile.getName());
                     console.log("Image URL: " + profile.getImageUrl());
