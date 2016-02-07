@@ -30,7 +30,7 @@ def problem():
         if l[i] != testcases[i]:
             correct = False
     if correct:
-        addExperience(session[userid], amount)
+        addExperience(session["userid"], amount)
     print(correct)
     return str(correct)
 
