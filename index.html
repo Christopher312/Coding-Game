@@ -60,7 +60,6 @@
                 if (response.status === 'connected') 
                 {
                   // Logged into your app and Facebook.
-                  sendData();
                   testAPI();
                 } 
                 else if (response.status === 'not_authorized') 
@@ -130,13 +129,6 @@
               });
               window.location.replace("/");
               document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-            });
-            
-          }
-          function sendData()
-          {
-            FB.api('/me', function(response) {
-              console.log('Name: ' + response.name);
             });
           }
             </script>
