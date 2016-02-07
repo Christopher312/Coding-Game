@@ -61,7 +61,7 @@
   padding: 0px 10px 0px 10px;
 }
 
-html{
-  background-color: gray;
+.active{
+  background-color: #396c48;
+  color: white;
 }
-
