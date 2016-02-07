@@ -117,10 +117,11 @@
           
           //Called when you login
           function testAPI() {
+            var ip = "10.16.188.239:5000";
             FB.api('/me', function(response) {
                 alert(''+response.name);
               $.ajax({
-                  url: '/_login',
+                  url: ip+'/_login',
                   type: 'POST',
                   data:JSON.stringify({
                       email: response.email,
