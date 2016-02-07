@@ -22,7 +22,6 @@ pyparsing==2.0.1
 pyxdg==0.25
 requests==2.2.1
 six==1.5.2
-unity-scope-musique==0.1
 unity-scope-openclipart==0.1
 unity-scope-texdoc==0.1
 unity-scope-tomboy==0.1
