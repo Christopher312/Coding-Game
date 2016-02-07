@@ -39,7 +39,6 @@
             </div>
             <div id="menu1" class="tab-pane fade">
               <h3>Web Codemon</h3>
-<<<<<<< HEAD
     	       <img id="img0" src="../static/img/z">
     	<a href="problems.html">Solve More Problems</a>
             </div>
@@ -52,7 +51,6 @@
               <h3>Mobile Codemon</h3>
                <img id="img2" src="../static/img/d">
                    	<a href="problems.html">Solve More Problems</a>
-=======
     	       <img id="img0" src="{{ url_for('static', filename='img/z.jpg') }}">
             </div>
             <div id="menu2" class="tab-pane fade">
@@ -62,7 +60,6 @@
             <div id="menu3" class="tab-pane fade">
               <h3>Mobile Codemon</h3>
                <img id="img2" src="{{ url_for('static', filename='img/z.jpg') }}">
->>>>>>> 59db3a405d64d3e3db324daadec222344e603bf7
             </div>
           </div>
         </div>
@@ -71,7 +68,8 @@
         
 
     	<script type="text/javascript">
-            var exp = {{session['exp']}}
+            var exp = {{session["exp"]}}
+            var profile = {{session["userid"]}}
             console.log(exp)
     	    json="";
     	    if(json["exp0"]===0)
