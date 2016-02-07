@@ -1,1 +1,1 @@
-web: python3 webpage.py
+web: python3 codemon/webpage.py
