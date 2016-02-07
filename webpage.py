@@ -4,7 +4,7 @@ from database import *
 app = Flask(__name__, static_folder='static')
 
 #testcases = "[\"2 3\", \"4 9\"]"
-testcases= {'1':2, '9':18, '0':0}
+testcases= [2, 6, 16]
 
 @app.route('/')
 def home():
