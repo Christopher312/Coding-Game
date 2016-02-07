@@ -15,15 +15,16 @@
         $("#submit-btn").click(function(){
             eval("results = cases.map(function(a){" + $("#source").val() + "})")
             console.log(results)
+            $.ajax({
+                url: '/_problem',
+                type: 'POST',
+                data:JSON.stringify({
+                    "results": results
+                    }),        
+                contentType: 'application/json;charset=UTF-8',
+            });
         });
-        $.ajax({
-            url: '/_problem',
-            type: 'POST',
-            data:JSON.stringify({
-                "results": results
-                }),        
-            contentType: 'application/json;charset=UTF-8',
-        });
+      
     </script>
 </body>
 </html>
