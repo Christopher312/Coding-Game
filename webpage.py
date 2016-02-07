@@ -1,10 +1,30 @@
 from flask import render_template, Flask, request, json, session
 from database import *
+from submitproblem import *
+
 app = Flask(__name__, static_folder='static')
+
+testcases = "[\"2 3\", \"4 9\"]"
 
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/problems', methods=['GET'])
+def problems():
+    return render_template('problems.html')
+
+@app.route('/_problem', methods=["POST"])
+def login():
+    json = request.json
+    source = json["source"]
+    lang = json["lang"]
+    tryCase(source, lang, testcases)
+    return "blank"
+
+@app.route('/codemonprofile', methods=['GET'])
+def profile():
+    return render_template('codemonprofile.html')
 
 @app.route('/_login', methods=["POST"])
 def login():
