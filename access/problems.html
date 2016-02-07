@@ -1,5 +1,22 @@
 <html>
 <head>
+<script>
+    var exp = 10;
+    var level=1;
+    document.getElementById("xp").innerHtml=exp +"/100 Experience for next level";
+    document.getElementById("level").innerHtml="Tux the Penguin, Level " + level;
+    function updateCodemon() {
+        exp+=50;
+        if(exp>100) {
+            level++;
+            exp-=100;
+        }
+        document.getElementById("xp").innerHTML=exp +"/100 Experience for next level";
+        document.getElementById("level").innerHTML="Tux the Penguin, Level " + level;
+        //alert("submitted");
+
+    }
+</script>
 </head>
 <body>
     <h1>Problems page</h1>
@@ -11,10 +28,14 @@
             <option value="Python">Python</option>
             <option value="C++">C++</option>
         </select>
-        <input id="submit" type="submit" value="Submit"/>
+        <button id="submit" type="button" onclick="updateCodemon();">Submit</button>
     </form>
-    <img src = "../images/tux.jpeg"/><br/>
-    <div>Tux the Penguin, Level 17</div><br/>
-    <div>89/100 Experience for next level</div><br/>
+    <img id="img" src = "../images/tux.jpeg"/><br/>
+    <div id="level"></div><br/>
+    <div id="xp"></div><br/>
+    <script>
+        document.getElementById("xp").innerHTML=exp +"/100 Experience for next level";
+        document.getElementById("level").innerHTML="Tux the Penguin, Level " + level;
+    </script>
 </body>
 </html>
