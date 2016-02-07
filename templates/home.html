@@ -20,7 +20,7 @@
             </form>
       </div>
 
-        <div class="container" style="padding-top:1em; width:90%">
+        <div class="container" style="padding-top:1em; width:70%">
           
         <font size="7em">
           <ul class="nav nav-pills">
@@ -39,6 +39,8 @@
             </div>
             <div id="menu1" class="tab-pane fade">
               <h3>Web Codemon</h3>
+<<<<<<< HEAD
+=======
     	       <img id="img0" src="../static/img/z">
     	<a href="problems.html">Solve More Problems</a>
             </div>
@@ -51,15 +53,22 @@
               <h3>Mobile Codemon</h3>
                <img id="img2" src="../static/img/d">
                    	<a href="problems.html">Solve More Problems</a>
+>>>>>>> 543eece04760512f6ebd869f3d993ec2bea8b957
     	       <img id="img0" src="{{ url_for('static', filename='img/z.jpg') }}">
+                <p id="exp0"></p>
             </div>
             <div id="menu2" class="tab-pane fade">
               <h3>Python Codemon</h3>
                <img id="img1" src="{{ url_for('static', filename='img/z.jpg') }}">
+                <p id="exp1"></p>
             </div>
             <div id="menu3" class="tab-pane fade">
               <h3>Mobile Codemon</h3>
                <img id="img2" src="{{ url_for('static', filename='img/z.jpg') }}">
+<<<<<<< HEAD
+                <p id="exp2"></p>
+=======
+>>>>>>> 543eece04760512f6ebd869f3d993ec2bea8b957
             </div>
             <p id = "exp-p">
                 {{session["exp"]}}
@@ -77,38 +86,47 @@
     	    if(json["exp0"]===0)
     	    {
     	        document.getElementById("img0").src="{{ url_for('static', filename='img/z.jpg') }}";
+    	        document.getElementById("exp0").innerHTML="Not Started!";
     	    }
     	    if(json["exp0"]<100)
     	    {
     	        document.getElementById("img0").src="{{ url_for('static', filename='img/a.jpg') }}";
+    	        document.getElementById("exp0").innerHTML="Level 1";
     	    }
     	    else
     	    {
     	        document.getElementById("img0").src="{{ url_for('static', filename='img/b.jpg') }}";
+    	        document.getElementById("exp0").innerHTML="Level 2";
     	    }    	    json="";
     	    if(json["exp1"]===0)
     	    {
     	        document.getElementById("img1").src="{{ url_for('static', filename='img/z.jpg') }}";
+    	        document.getElementById("exp1").innerHTML="Not Started!";
     	    }
     	    if(json["exp1"]<100)
     	    {
     	        document.getElementById("img1").src="{{ url_for('static', filename='img/e.jpg') }}";
+    	        document.getElementById("exp1").innerHTML="Level 1";
     	    }
     	    else
     	    {
     	        document.getElementById("img1").src="{{ url_for('static', filename='img/f.jpg') }}";
+    	        document.getElementById("exp1").innerHTML="Level 2";
     	    }    	    json="";
     	    if(json["exp2"]===0)
     	    {
     	        document.getElementById("img2").src="{{ url_for('static', filename='img/z.jpg') }}";
+    	        document.getElementById("exp2").innerHTML="Not Started!";
     	    }
     	    if(json["exp2"]<100)
     	    {
     	        document.getElementById("img2").src="{{ url_for('static', filename='img/c.jpg') }}";
+    	        document.getElementById("exp2").innerHTML="Level 1";
     	    }
     	    else
     	    {
     	        document.getElementById("img2").src="{{ url_for('static', filename='img/d.jpg') }}";
+    	        document.getElementById("exp2").innerHTML="Level 2";
     	    }
     	</script>
     	
