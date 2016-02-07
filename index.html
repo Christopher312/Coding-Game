@@ -152,6 +152,10 @@
               window.location.href = "https://christopher312.github.io/Coding-Game/access/home.html";
             });
           }
+            FB.Event.subscribe('auth.login', function(response) {
+                alert("Logged in.. Redirecting you now...");
+                window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
+            });
             </script>
             <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button size:"xlarge"> -->
             <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
