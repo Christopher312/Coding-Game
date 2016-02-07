@@ -58,7 +58,7 @@
                     window.location.href = "https://christopher312.github.io/Coding-Game/access/home.html";
                 };
 
-                
+
                 window.fbAsyncInit = function() {
                   FB.init({
                     appId      : '172310886472724',
@@ -102,7 +102,6 @@
               // Button.  See the onlogin handler attached to it in the sample code below.
               function checkLoginState() {
                 FB.getLoginStatus(function(response) {
-                  console.log('is it being reached')
                   statusChangeCallback(response);
                 });
               }
@@ -158,7 +157,7 @@
           }
             </script>
             <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button size:"xlarge"> -->
-            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+            <div class="fb-login-button" data-max-rows="1" onlogin-"checkLoginState();" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
             <div id="fbstatus"></div>
             <p></p>
             <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
