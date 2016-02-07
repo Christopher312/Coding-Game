@@ -11,7 +11,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
         <meta name="google-signin-scope" content="profile email">
-        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="1012183044219-8sfmuphvmecq4jj331412ch9r374jecv.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body>
@@ -130,6 +130,8 @@
         });
       }
         </script>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+        <div id="fbstatus"></div>
         <!--<div-->
         <!--  class="fb-like"-->
         <!--  data-share="true"-->
