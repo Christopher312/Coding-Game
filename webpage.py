@@ -22,7 +22,7 @@ def problem():
     #tryCase(source, lang, testcases)
     correct = True;
     for i in range(len(l)):
-        if(l[i]!=testcases[i])
+        if l[i]!=testcases[i]:
             correct = False
     print(correct)
     return correct
