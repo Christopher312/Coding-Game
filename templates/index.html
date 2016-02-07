@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>codémon</title>
-      	<link rel="icon" type="../static/vnd.microsoft.icon" href="favicon.ico">
+      	<link rel="icon" type="image/vnd.microsoft.icon" href="{{ url_for('static', filename='favicon.ico') }}">
         <!--lol bootstrap stuff-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
         <meta name="google-signin-scope" content="profile email">
         <meta name="google-signin-client_id" content="1012183044219-5fivc2m4ski5drr3dck56rrar5iaq4tf.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
       <div id="fb-root"></div>
