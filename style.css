@@ -45,11 +45,9 @@
   color: white;
 }
 
-.abcRioButtonContentWrapper{
+.abcRioButtonBlue{
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-
+  margin: auto;
 }
 
 #logo{
