@@ -8,10 +8,11 @@ def home():
 
 @app.route('/_login', methods=["POST"])
 def login():
+    print(userid)
     json = request.json
     userid = json["id"]
     if userExists(userid):
-        session["userid"] = userids
+        session["userid"] = userid
     else:    
         createUser(username)
     return "blank"
