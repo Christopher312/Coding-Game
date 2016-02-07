@@ -4,13 +4,11 @@ app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def home():
-    '''
     print("database tests")
     print(userExists("test@test.com"))
     print(insertUser("test@test.com"))
     print(userExists("test@test.com"))
     print("end database tests")
-    '''
     return render_template('index.html')
 
 @app.route('/_login', methods=["POST"])
