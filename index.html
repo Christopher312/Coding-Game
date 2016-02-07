@@ -22,7 +22,7 @@
           <div class="vcenter">
             <img id="logo" src="images/codemon.png" alt="Codemon">
             <p id="logotext">
-              login through Facebook to begin your quest!
+              login to begin your quest!
             </p>
             <div>
               <script>
@@ -65,14 +65,14 @@
                 else if (response.status === 'not_authorized') 
                 {
                   // Logged into Facebook, but not your app.
-                  document.getElementById('fbstatus').innerHTML = 'Please log ' +
-                    'into this app.';
+                  // document.getElementById('fbstatus').innerHTML = 'Please log ' +
+                  //   'into this app.';
                 } 
                 else 
                 {
                   // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
-                  document.getElementById('fbstatus').innerHTML = 'Please log ' +
-                    'into Facebook.';
+                  // document.getElementById('fbstatus').innerHTML = 'Please log ' +
+                  //   'into Facebook.';
                 }
               }
             
@@ -119,7 +119,7 @@
           function testAPI() {
             var ip = "10.16.188.239:5000";
             FB.api('/me', function(response) {
-                alert(''+response.name);
+                // alert(''+response.name);
               $.ajax({
                   url: ip+'/_login',
                   type: 'POST',
@@ -134,7 +134,7 @@
             });
           }
             </script>
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button size:"xlarge">
             <div id="fbstatus"></div>
             <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             </div>
