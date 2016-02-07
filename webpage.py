@@ -20,12 +20,13 @@ def problem():
     #source = json["source"]
     #lang = json["lang"]
     #tryCase(source, lang, testcases)
+    print(l)
     correct = True;
     for i in range(len(l)):
-        if l[i]!=testcases[i]:
+        if l[i] != testcases[i]:
             correct = False
     print(correct)
-    return correct
+    return str(correct)
 
 @app.route('/codemonprofile', methods=['GET'])
 def profile():
