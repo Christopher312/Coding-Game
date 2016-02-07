@@ -55,7 +55,7 @@
                     // The ID token you need to pass to your backend:
                     var id_token = googleUser.getAuthResponse().id_token;
                     console.log("ID Token: " + id_token);
-                    window.redirect("/access/home.html");
+                    window.location("/access/home.html");
                 };
                 window.fbAsyncInit = function() {
                   FB.init({
@@ -149,7 +149,7 @@
                   contentType: 'application/json;charset=UTF-8',
               });
               document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-              window.redirect("/access/home.html");
+              window.location("/access/home.html");
             });
           }
             </script>
