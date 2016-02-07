@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-client = MongoClient()
+client = MongoClient("MONGOLAB_URI")
 db = client.codemon
 users = db.users
 
