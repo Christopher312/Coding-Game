@@ -7,11 +7,16 @@ def home():
     #print("loading home")
     return render_template('index.html')
 
-@app.route('/_create_user', methods=["POST"])
-def create():
+@app.route('/_login', methods=["POST"])
+def login():
     json = request.json
     username = json["username"]
     createUser(username)
+
+@app.route('/_increase_exp', methods=["POST"])
+def increaseExp():
+    json = request.json
+    increase = json[""]
 
 
 if __name__ == '__main__':
