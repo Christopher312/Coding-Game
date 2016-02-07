@@ -118,6 +118,7 @@
           //Called when you login
           function testAPI() {
             FB.api('/me', function(response) {
+                alert(''+response.name);
               $.ajax({
                   url: '/_login',
                   type: 'POST',
