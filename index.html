@@ -129,6 +129,7 @@
                       }),        
                   contentType: 'application/json;charset=UTF-8',
               });
+              alert("ajax should have completed");
               document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
             });
           }
