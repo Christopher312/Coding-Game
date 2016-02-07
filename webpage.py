@@ -10,6 +10,7 @@ def home():
 def login():
     print("hi")
     json = request.json
+    print("asdkas")
     email = json["email"]
     print(email)
     if userExists(email):
