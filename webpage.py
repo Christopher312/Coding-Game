@@ -10,10 +10,13 @@ def home():
 def login():
     json = request.json
     email = json["email"]
+    print("hi")
+    print(email)
     if userExists(email):
         session["email"] = email
     else:    
         createUser(username)
+    return "blank"
 
 @app.route('/_increase_exp', methods=["POST"])
 def increaseExp():
