@@ -22,7 +22,6 @@ pyparsing==2.0.1
 pyxdg==0.25
 requests==2.2.1
 six==1.5.2
-unity-scope-firefoxbookmarks==0.1
 unity-scope-gdrive==0.7
 unity-scope-gmusicbrowser==0.1
 unity-scope-gourmet==0.1
