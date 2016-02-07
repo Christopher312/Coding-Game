@@ -99,12 +99,20 @@
       // Here we run a very simple test of the Graph API after login is
       // successful.  See statusChangeCallback() for when this call is made.
       function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
-          console.log('Successful login for: ' + response.name);
-          document.getElementById('fbstatus').innerHTML =
-            'Thanks for logging in, ' + response.name + '!';
+          $.ajax({
+        		url: '/_create_user',
+        		type: 'POST',
+                data:JSON.stringify({
+                	email: response.email,
+                  username: response.name
+                	}),        
+                contentType: 'application/json;charset=UTF-8',
+                });
+        	window.location.replace("/");
+          document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
         });
+        
       }
       function sendData()
       {
@@ -121,5 +129,7 @@
         <!--  data-width="450"-->
         <!--  data-show-faces="true"></div>-->
         wait what
+        
+        <!--hackerrank|966669-629|26c276f498788390b13ae4e038a6569325c2f623-->
     </body>
 </html>
