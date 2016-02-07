@@ -3,8 +3,11 @@ MONGODB_URI = 'mongodb://heroku_mkt3h9sk:heirlr5tqt4cchtstvsld3di12@ds059185.mon
 from pymongo import MongoClient
 client = MongoClient(MONGODB_URI)
 #client = MongoClient()
-db = client.codemon
-users = db.users
+#db = client.codemon
+#users = db.users
+
+db = client.get_default_database()
+users = db['users']
 
 def userExists(email):
     return users.find({"email": email}).count() > 0
