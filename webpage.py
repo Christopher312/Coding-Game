@@ -11,6 +11,7 @@ def login():
     print("hi")
     json = request.json
     print("asdkas")
+    print(json)
     email = json["email"]
     print(email)
     if userExists(email):
