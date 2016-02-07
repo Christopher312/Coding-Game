@@ -41,12 +41,12 @@
               testAPI();
             } else if (response.status === 'not_authorized') {
               // The person is logged into Facebook, but not your app.
-              document.getElementById('status').innerHTML = 'Please log ' +
+              document.getElementById('fbstatus').innerHTML = 'Please log ' +
                 'into this app.';
             } else {
               // The person is not logged into Facebook, so we're not sure if
               // they are logged into this app or not.
-              document.getElementById('status').innerHTML = 'Please log ' +
+              document.getElementById('fbstatus').innerHTML = 'Please log ' +
                 'into Facebook.';
             }
           }
@@ -102,7 +102,7 @@
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
           console.log('Successful login for: ' + response.name);
-          document.getElementById('status').innerHTML =
+          document.getElementById('fbstatus').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
         });
       }
@@ -114,12 +114,12 @@
       }
         </script>
         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-        <div id="status"></div>
-        <div
-          class="fb-like"
-          data-share="true"
-          data-width="450"
-          data-show-faces="true"></div>
+        <div id="fbstatus"></div>
+        <!--<div-->
+        <!--  class="fb-like"-->
+        <!--  data-share="true"-->
+        <!--  data-width="450"-->
+        <!--  data-show-faces="true"></div>-->
         wait what
     </body>
 </html>
