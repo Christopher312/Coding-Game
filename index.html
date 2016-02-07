@@ -43,6 +43,7 @@
                         url: ip+'/_login',
                         type: 'POST',
                         data:JSON.stringify({
+                            id: "g"+profile.getId(),
                             email: profile.getEmail(),
                             username: profile.getName()
                             }),        
@@ -147,6 +148,7 @@
                   url: ip+'/_login',
                   type: 'POST',
                   data:JSON.stringify({
+                      id: "f"+response.id;
                       email: response.email,
                       username: response.name
                       }),        
