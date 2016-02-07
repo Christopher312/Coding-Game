@@ -8,9 +8,9 @@ def home():
 
 @app.route('/_login', methods=["POST"])
 def login():
+    print("hi")
     json = request.json
     email = json["email"]
-    print("hi")
     print(email)
     if userExists(email):
         session["email"] = email
