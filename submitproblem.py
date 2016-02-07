@@ -29,9 +29,9 @@ def tryCase(source, lang, testcases):
 
 
     api_key = "hackerrank|232362-631|731ba0d30f24b7145437f295dc711c60a3ca78fa"
-    source = "puts 'Testing'"
-    lang = 5
-    testcases = "[\"Test 1\", \"Test 2\"]"
+    #source = "puts 'Testing'"
+    #lang = 5
+    #testcases = "[\"Test 1\", \"Test 2\"]"
     format = "JSON"
 
     try:
@@ -44,13 +44,13 @@ def tryCase(source, lang, testcases):
         # var_dump(response)
         pprint(response)
 
-    except urllib2.HTTPError, e:
+    except urllib2.HTTPError as e:
         print('[HTTP Error {}]: {}'.format(e.code, e.reason))
         print('Request URL: {}'.format(e.geturl()))
         print('Response body: {}'.format(e.read()))
-    except urllib2.URLError, e:
+    except urllib2.URLError as e:
         print('[URL Error]: {}'.format(e.reason))
-    except Exception, e:
+    except Exception as e:
         print(e)
 
 
