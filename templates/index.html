@@ -1,17 +1,168 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
+    <head>
+        <title>codémon</title>
+      	<link rel="icon" type="../static/vnd.microsoft.icon" href="favicon.ico">
+        <!--lol bootstrap stuff-->
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../static/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="1012183044219-5fivc2m4ski5drr3dck56rrar5iaq4tf.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
     </head>
-
     <body>
-    	<a href="../static/problems.html">Solve More Problems</a>
-    	<img src="../static/html.png">
-    	<img src="../static/android.png">
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <img class="img-responsive centered" src="images/bg.jpg" alt="Background">
+
+      <div id="overlay" class="dimmed">
+        <div id="greeting" class="centered">
+          <div class="vcenter">
+            <img id="logo" src="images/codemon.png" alt="Codemon">
+            <p id="logotext">
+              login to begin your quest!
+            </p>
+            <div>
+              <script>
+                function onSignIn(googleUser) {
+                    // Useful data for your client-side scripts:
+                    var profile = googleUser.getBasicProfile();
+                    $.ajax({
+                        url: ip+'/_login',
+                        type: 'POST',
+                        data:JSON.stringify({
+                            email: profile.getEmail(),
+                            username: profile.getName()
+                            }),        
+                            contentType: 'application/json;charset=UTF-8',
+                    });
+                    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                    console.log("Name: " + profile.getName());
+                    console.log("Image URL: " + profile.getImageUrl());
+                    console.log("Email: " + profile.getEmail());
+            
+                    // The ID token you need to pass to your backend:
+                    var id_token = googleUser.getAuthResponse().id_token;
+                    console.log("ID Token: " + id_token);
+                    window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
+                };
+                window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '172310886472724',
+                    xfbml      : true,
+                    version    : 'v2.5'
+                  });
+                };
+                (function(d, s, id)
+                {
+                   var js, fjs = d.getElementsByTagName(s)[0];
+                   if (d.getElementById(id)) {return;}
+                   js = d.createElement(s); js.id = id;
+                   js.src = "//connect.facebook.net/en_US/sdk.js";
+                   fjs.parentNode.insertBefore(js, fjs);
+                 }(document, 'script', 'facebook-jssdk'));
+                   // This is called with the results from from FB.getLoginStatus().
+              function statusChangeCallback(response) {
+                // The response object is returned with a status field that lets the app know the current login status of the person.
+                // Full docs on the response object can be found in the documentation for FB.getLoginStatus().
+                if (response.status === 'connected') 
+                {
+                  // Logged into your app and Facebook.
+                  testAPI();
+                } 
+                else if (response.status === 'not_authorized') 
+                {
+                  // Logged into Facebook, but not your app.
+                  // document.getElementById('fbstatus').innerHTML = 'Please log ' +
+                  //   'into this app.';
+                } 
+                else 
+                {
+                  // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
+                  // document.getElementById('fbstatus').innerHTML = 'Please log ' +
+                  //   'into Facebook.';
+                }
+              }
+            
+              // This function is called when someone finishes with the Login
+              // Button.  See the onlogin handler attached to it in the sample code below.
+              function checkLoginState() {
+                FB.getLoginStatus(function(response) {
+                  statusChangeCallback(response);
+                });
+              }
+            
+              window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '172310886472724',
+                cookie     : true,  // enable cookies to allow the server to access the session
+                xfbml      : true,  // parse social plugins on this page
+                version    : 'v2.2' // use version 2.2
+              });
+
+          // Now that we've initialized the JavaScript SDK, we call 
+          // FB.getLoginStatus().  This function gets the state of the
+          // person visiting this page and can return one of three states to
+          // the callback you provide.  They can be:
+          // 1. Logged into your app ('connected')
+          // 2. Logged into Facebook, but not your app ('not_authorized')
+          // 3. Not logged into Facebook and can't tell if they are logged into
+          //    your app or not.
+          // These three cases are handled in the callback function.
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+          };
+        
+          // Load the SDK asynchronously
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+          
+          //Called when you login
+          function testAPI() {
+            var ip = "10.16.188.239:5000";
+            FB.api('/me', function(response) {
+                // alert(''+response.name);
+              $.ajax({
+                  url: ip+'/_login',
+                  type: 'POST',
+                  data:JSON.stringify({
+                      email: response.email,
+                      username: response.name
+                      }),        
+                  contentType: 'application/json;charset=UTF-8',
+              });
+              document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+              window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
+            });
+          }
+            </script>
+            <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button size:"xlarge"> -->
+            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+            <div id="fbstatus"></div>
+            <p></p>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        <!--hackerrank|966669-629|26c276f498788390b13ae4e038a6569325c2f623-->
     </body>
 </html>
