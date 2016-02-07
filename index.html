@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>clearly not a pokemon ripoff</title>
+        <title>codémon</title>
       	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
         <!--lol bootstrap stuff-->
         <meta charset="utf-8">
@@ -15,6 +15,15 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
       <img class="img-responsive centered" src="images/bg.jpg" alt="Background">
 
       <div id="overlay" class="dimmed">
@@ -135,6 +144,7 @@
           }
             </script>
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button size:"xlarge">
+            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
             <div id="fbstatus"></div>
             <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             </div>
