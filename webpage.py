@@ -18,11 +18,6 @@ def login():
         createUser(username)
     return "blank"
 
-@app.route('/_increase_exp', methods=["POST"])
-def increaseExp():
-    json = request.json
-    increase = json[""]
-
 @app.route('/_logout', methods=["POST"])
 def logout():
     session.clear()
