@@ -1,10 +1,10 @@
 from flask import render_template, Flask, request, json, session
 from database import *
-from submitproblem import *
 
 app = Flask(__name__, static_folder='static')
 
-testcases = "[\"2 3\", \"4 9\"]"
+#testcases = "[\"2 3\", \"4 9\"]"
+testcases= {'1':2, '9':18, '0':0}
 
 @app.route('/')
 def home():
@@ -15,12 +15,17 @@ def problems():
     return render_template('problems.html')
 
 @app.route('/_problem', methods=["POST"])
-def login():
-    json = request.json
-    source = json["source"]
-    lang = json["lang"]
-    tryCase(source, lang, testcases)
-    return "blank"
+def problem():
+    l = request.json["results"]
+    #source = json["source"]
+    #lang = json["lang"]
+    #tryCase(source, lang, testcases)
+    correct = True;
+    for i in range(len(l)):
+        if(l[i]!=testcases[i])
+            correct = False
+    print(correct)
+    return correct
 
 @app.route('/codemonprofile', methods=['GET'])
 def profile():
