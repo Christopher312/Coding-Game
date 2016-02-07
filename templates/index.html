@@ -39,7 +39,7 @@
                     // Useful data for your client-side scripts:
                     var profile = googleUser.getBasicProfile();
                     $.ajax({
-                        url: ip+'/_login',
+                        url: '/_login',
                         type: 'POST',
                         data:JSON.stringify({
                             email: profile.getEmail(),
@@ -55,8 +55,7 @@
                     // The ID token you need to pass to your backend:
                     var id_token = googleUser.getAuthResponse().id_token;
                     console.log("ID Token: " + id_token);
-                    window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
-                };
+                  };
                 window.fbAsyncInit = function() {
                   FB.init({
                     appId      : '172310886472724',
@@ -136,11 +135,10 @@
           
           //Called when you login
           function testAPI() {
-            var ip = "10.16.188.239:5000";
             FB.api('/me', function(response) {
                 // alert(''+response.name);
               $.ajax({
-                  url: ip+'/_login',
+                  url: '/_login',
                   type: 'POST',
                   data:JSON.stringify({
                       email: response.email,
@@ -149,7 +147,6 @@
                   contentType: 'application/json;charset=UTF-8',
               });
               document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-              window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
             });
           }
             </script>
