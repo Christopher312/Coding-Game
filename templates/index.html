@@ -138,7 +138,7 @@
             FB.api('/me', function(response) {
                 // alert(''+response.name);
               $.ajax({
-                  url: 'codemon.herokuapp.com/_login',
+                  url: '/_login',
                   type: 'POST',
                   data:JSON.stringify({
                       email: response.email,
