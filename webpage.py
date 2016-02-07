@@ -8,13 +8,13 @@ def home():
 
 @app.route('/_login', methods=["POST"])
 def login():
-    print(userid)
     json = request.json
     userid = json["id"]
+    print(userid)
     if userExists(userid):
         session["userid"] = userid
     else:    
-        createUser(username)
+        createUser(userid)
     return "blank"
 
 @app.route('/_logout', methods=["POST"])
@@ -26,7 +26,7 @@ def logout():
 def addXP():
     json = request.json
     amount = json["amount"]
-    addExperience(session["email"], amount)
+    addExperience(session["userid"], amount)
     updateSession()
 
 def updateSession():
