@@ -22,7 +22,6 @@ pyparsing==2.0.1
 pyxdg==0.25
 requests==2.2.1
 six==1.5.2
-unattended-upgrades==0.1
 unity-scope-audacious==0.1
 unity-scope-calculator==0.1
 unity-scope-chromiumbookmarks==0.1
