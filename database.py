@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 MONGODB_URI = 'mongodb://heroku_mkt3h9sk:heirlr5tqt4cchtstvsld3di12@ds059185.mongolab.com:59185/heroku_mkt3h9sk' 
 
 from pymongo import MongoClient
