@@ -79,7 +79,7 @@
                 if (response.status === 'connected') 
                 {
                   // Logged into your app and Facebook.
-                  testAPI();
+                  var lol = return testAPI();
                 } 
                 else if (response.status === 'not_authorized') 
                 {
@@ -150,6 +150,7 @@
               });
               document.getElementById('fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
               window.location = "https://christopher312.github.io/Coding-Game/access/home.html";
+              return false;
             });
           }
             </script>
