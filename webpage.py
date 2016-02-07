@@ -7,8 +7,12 @@ app = Flask(__name__, static_folder='static')
 testcases= [2, 6, 16]
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/problems', methods=['GET'])
 def problems():
@@ -25,6 +29,8 @@ def problem():
     for i in range(len(l)):
         if l[i] != testcases[i]:
             correct = False
+    if correct:
+        addExperience(session[userid], amount)
     print(correct)
     return str(correct)
 
@@ -47,14 +53,14 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for('home'))
-
+'''
 @app.route('/_addXP', methods=["POST"])
 def addXP():
     json = request.json
     amount = json["amount"]
     addExperience(session["userid"], amount)
     updateSession()
-
+'''
 def updateSession():
     session["exp"] = getExperience(session["userid"]) 
 
