@@ -45,6 +45,12 @@
   color: white;
 }
 
+.hcenter{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 #logo{
   width: 50%;
 }
