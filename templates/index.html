@@ -42,8 +42,8 @@
                         url: '/_login',
                         type: 'POST',
                         data:JSON.stringify({
-                            email: profile.getEmail(),
-                            username: profile.getName()
+                            "id": "g"+profile.getId(),
+                            "username": profile.getName()
                             }),        
                             contentType: 'application/json;charset=UTF-8',
                     });
@@ -136,14 +136,14 @@
           //Called when you login
           function testAPI() {
             FB.api('/me', function(response) {
-              console.log(response.email)
+              console.log(response.id)
               console.log(response)
                 // alert(''+response.name);
               $.ajax({
                   url: '/_login',
                   type: 'POST',
                   data:JSON.stringify({
-                      "email": response.email,
+                      "id": "f" + response.id,
                       "username": response.name
                       }),        
                   contentType: 'application/json;charset=UTF-8',

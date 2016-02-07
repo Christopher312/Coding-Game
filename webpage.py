@@ -8,14 +8,10 @@ def home():
 
 @app.route('/_login', methods=["POST"])
 def login():
-    print("hi")
     json = request.json
-    print("asdkas")
-    print(json)
-    email = json["email"]
-    print(email)
-    if userExists(email):
-        session["email"] = email
+    userid = json["id"]
+    if userExists(userid):
+        session["userid"] = userids
     else:    
         createUser(username)
     return "blank"
@@ -33,7 +29,7 @@ def addXP():
     updateSession()
 
 def updateSession():
-    session["exp"] = getExperience(session["email"]) 
+    session["exp"] = getExperience(session["userid"]) 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

@@ -9,19 +9,20 @@ client = MongoClient(MONGODB_URI)
 db = client.get_default_database()
 users = db['users']
 
-def userExists(email):
-    return users.find({"email": email}).count() > 0
+def userExists(userid):
+    return users.find({"userid": userid}).count() > 0
     
-def insertUser(email):
+def insertUser(userid):
+    print(userid)
     users.insert(
-        {"email": email, "codemon": {"exp": 0}}
+        {"userid": userid, "codemon": {"exp": 0}}
     )
 
-def addExperience(email, amount):
+def addExperience(userid, amount):
     users.update_one(
-        {"email": email},
+        {"userid": userid},
         {"$inc": {"codemon.exp": amount}}
     )
 
-def getExperience(email):
-    return users.find({"email": email})["exp"]
+def getExperience(userid):
+    return users.find({"userid": userid})["exp"]
