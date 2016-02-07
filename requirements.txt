@@ -24,5 +24,4 @@ requests==2.2.1
 six==1.5.2
 
 urllib3==1.7.1
-xkit==0.0.0
 virtualenv==12.0.7
