@@ -1,18 +1,34 @@
-from flask import render_template, Flask, request, json
+from flask import render_template, Flask, request, json, session
 from database import *
 app = Flask(__name__, static_folder='/Users/Main_Account/Documents/GitHub/Coding_Game')
 
 @app.route('/')
 def home():
-    #print("loading home")
     return render_template('index.html')
 
-@app.route('/_create_user', methods=["POST"])
-def create():
+@app.route('/_login', methods=["POST"])
+def login():
     json = request.json
-    username = json["username"]
-    createUser(username)
+    email = json["email"]
+    if userExists(email):
+        session["email"] = email
+    else:    
+        createUser(username)
 
+@app.route('/_logout', methods=["POST"])
+def logout():
+    session.clear()
+    return redirect(url_for('home'))
+
+@app.route('/_addXP', methods=["POST"])
+def addXP():
+    json = request.json
+    amount = json["amount"]
+    addExperience(session["email"], amount)
+    updateSession()
+
+def updateSession():
+    session["exp"] = getExperience(session["email"]) 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

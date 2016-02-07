@@ -3,13 +3,19 @@ client = MongoClient()
 db = client.codemon
 users = db.users
 
-def insertUser(username):
+def userExists(email):
+    return users.find({"email": email}).count > 0
+
+def insertUser(email):
     users.insert(
-        {"username": username, "codemon": {"exp": 0}}
+        {"email": email, "codemon": {"exp": 0}}
     )
 
-def addExperience(username, amount):
+def addExperience(email, amount):
     users.update_one(
-        {"username": username},
+        {"email": email},
         {"$inc": {"codemon.exp": amount}}
     )
+
+def getExperience(email):
+    return users.find({"email": email})["exp"]
