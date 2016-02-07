@@ -14,6 +14,7 @@
         var results = []
         $("#submit-btn").click(function(){
             eval("results = cases.map(function(a){" + $("#source").val() + "})")
+            resuls = results.map(toString)
             console.log(results)
             $.ajax({
                 url: '/_problem',
