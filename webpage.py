@@ -1,6 +1,6 @@
 from flask import render_template, Flask, request, json, session
 from database import *
-app = Flask(__name__, static_folder='/Users/Main_Account/Documents/GitHub/Coding_Game')
+app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def home():

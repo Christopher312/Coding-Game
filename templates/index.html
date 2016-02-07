@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>codémon</title>
-      	<link rel="icon" type="image/vnd.microsoft.icon" href="{{ url_for('static', filename='favicon.ico') }}">
+      	<link rel="icon" type="image/vnd.microsoft.icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
         <!--lol bootstrap stuff-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,12 +24,12 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
 
-      <img class="img-responsive centered" src="images/bg.jpg" alt="Background">
+      <img class="img-responsive centered" src="{{ url_for('static', filename='img/bg.jpg') }}" alt="Background">
 
       <div id="overlay" class="dimmed">
         <div id="greeting" class="centered">
           <div class="vcenter">
-            <img id="logo" src="images/codemon.png" alt="Codemon">
+            <img id="logo" src="{{ url_for('static', filename='img/codemon.png') }}" alt="Codemon">
             <p id="logotext">
               login to begin your quest!
             </p>
