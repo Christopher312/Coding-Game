@@ -37,6 +37,7 @@
               <script>
                 function onSignIn(googleUser) {
                     // Useful data for your client-side scripts:
+                    console.log('testing...')
                     var profile = googleUser.getBasicProfile();
                     $.ajax({
                         url: ip+'/_login',
