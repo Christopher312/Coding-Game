@@ -1,1 +1,1 @@
-web: python3 codemon/webpage.py
+web: gunicorn webpage:app
