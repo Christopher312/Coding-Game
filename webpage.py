@@ -12,6 +12,7 @@ def index():
 
 @app.route('/home')
 def home():
+    print(getExperience(session["userid"]))
     return render_template('home.html', exp=getExperience(session["userid"]))
 
 @app.route('/problems', methods=['GET'])
