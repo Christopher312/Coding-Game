@@ -51,6 +51,7 @@ def login():
     else:    
         createUser(userid)
         session["userid"] = userid
+    print("userid from session", session["userid"])
     return "blank"
 
 @app.route('/_logout', methods=["POST"])
