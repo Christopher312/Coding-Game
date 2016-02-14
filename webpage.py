@@ -1,5 +1,6 @@
 from flask import render_template, Flask, request, json, session
 from database import *
+import sys
 
 app = Flask(__name__, static_folder='static')
 
@@ -49,7 +50,11 @@ def login():
     print("login", userid)
     if userExists(userid):
         print("exists")
-        session["userid"] = userid
+        try:
+            session["userid"] = userid
+        except:
+            e = sys.exc_info()[0]
+            print(e)
         print("hi 1")
     else:
         print("doesn't exists")    
