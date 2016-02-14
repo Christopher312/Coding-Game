@@ -44,8 +44,8 @@ def profile():
 @app.route('/_login', methods=["POST"])
 def login():
     json = request.json
-    userid = json["id"]        print("hi 1")
-
+    userid = json["id"]        
+    print("hi 1")
     print("login", userid)
     if userExists(userid):
         print("exists")
