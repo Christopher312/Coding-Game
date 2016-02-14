@@ -9,6 +9,8 @@ testcases= [2, 6, 16]
 
 @app.route('/')
 def index():
+    session["lol"] = "meh"
+    print(session["lol"])
     return render_template('index.html')
 
 @app.route('/home')
@@ -78,5 +80,9 @@ def addXP():
 '''
 
 if __name__ == '__main__':
-    app.secret_key = 'NOTVERYSECRET'
+    app.config.update(
+        DEBUG=True,
+        SECRET_KEY="NOT_VERY_SECRET",
+        SESSION_COOKIE_NAME="codemon"
+    )
     app.run(host='0.0.0.0', debug=True)
