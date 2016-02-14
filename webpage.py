@@ -13,7 +13,7 @@ def index():
 @app.route('/home')
 def home():
     print("hi")
-    print(session["userid"])
+    print("home", session["userid"])
     print(getExperience(session["userid"]))
     return render_template('home.html', exp=getExperience(session["userid"]))
 
@@ -45,11 +45,12 @@ def profile():
 def login():
     json = request.json
     userid = json["id"]
-    print(userid)
+    print("login", userid)
     if userExists(userid):
         session["userid"] = userid
     else:    
         createUser(userid)
+        session["userid"] = userid
     return "blank"
 
 @app.route('/_logout', methods=["POST"])
