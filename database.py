@@ -25,4 +25,4 @@ def addExperience(userid, amount):
     )
 
 def getExperience(userid):
-    return users.find_one({"userid": userid})["exp"]
+    return users.find_one({"userid": userid})["codemon"]["exp"]
