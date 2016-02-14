@@ -73,4 +73,5 @@ def addXP():
 '''
 
 if __name__ == '__main__':
+    app.secret_key = 'NOTVERYSECRET'
     app.run(host='0.0.0.0', debug=True)
