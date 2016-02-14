@@ -3,6 +3,11 @@ from database import *
 import sys
 
 app = Flask(__name__, static_folder='static')
+app.config.update(
+    DEBUG=True,
+    SECRET_KEY="NOT_VERY_SECRET",
+    SESSION_COOKIE_NAME="codemon"
+)
 
 #testcases = "[\"2 3\", \"4 9\"]"
 testcases= [2, 6, 16]
@@ -78,9 +83,4 @@ def addXP():
 '''
 
 if __name__ == '__main__':
-    app.config.update(
-        DEBUG=True,
-        SECRET_KEY="NOT_VERY_SECRET",
-        SESSION_COOKIE_NAME="codemon"
-    )
     app.run(host='0.0.0.0', debug=True)
