@@ -9,8 +9,6 @@ testcases= [2, 6, 16]
 
 @app.route('/')
 def index():
-    session["lol"] = "meh"
-    print(session["lol"])
     return render_template('index.html')
 
 @app.route('/home')
