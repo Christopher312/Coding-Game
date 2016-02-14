@@ -34,6 +34,7 @@ def problem():
     #lang = json["lang"]
     #tryCase(source, lang, testcases)
     print(l)
+    amount = 50
     correct = True;
     for i in range(len(l)):
         if l[i] != testcases[i]:
