@@ -47,12 +47,16 @@ def login():
     userid = json["id"]
     print("login", userid)
     if userExists(userid):
+        print("exists")
         session["userid"] = userid
-    else:    
+        print("hi 1")
+    else:
+        print("doesn't exists")    
         createUser(userid)
         session["userid"] = userid
+        print("hi 2")
     print("userid from session", session["userid"])
-    return "blank"
+    return "ok"
 
 @app.route('/_logout', methods=["POST"])
 def logout():
