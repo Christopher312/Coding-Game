@@ -44,7 +44,8 @@ def profile():
 @app.route('/_login', methods=["POST"])
 def login():
     json = request.json
-    userid = json["id"]
+    userid = json["id"]        print("hi 1")
+
     print("login", userid)
     if userExists(userid):
         print("exists")
@@ -52,7 +53,7 @@ def login():
         print("hi 1")
     else:
         print("doesn't exists")    
-        createUser(userid)
+        insertUser(userid)
         session["userid"] = userid
         print("hi 2")
     print("userid from session", session["userid"])
