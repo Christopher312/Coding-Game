@@ -24,6 +24,9 @@
             <a href="/problems">Solve More Problems</a>
             <img src="{{ url_for('static', filename='img/z.jpg') }}">
             <div class="container" style="padding-top:1em; width:70%">
+            <p id = "exp-p">
+                {{exp}}
+            </p>
         </div>
             <font size="7em">
                 <ul class="nav nav-pills">
@@ -34,8 +37,9 @@
                 </ul>
             </font>
         </div>
+
         <font size="5">
-            <div class="tab-content">
+            <div class="tab-content container">
                 <div id="home" class="tab-pane fade in active">
                     <h3>Home</h3>
                     <p>Solve coding problems to evolve your Codemon!</p>
@@ -54,10 +58,6 @@
                     <h3>Mobile Codemon</h3>
                     <img id="img2">
                     <p id="exp2"></p>
-                </div>
-                    <p id = "exp-p">
-                      {{exp}}
-                    </p>
                 </div>
             </div>
         </font>
