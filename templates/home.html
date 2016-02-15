@@ -11,7 +11,7 @@
     </head>
 
     <body>
-      <div class="container" style="width:100%; background-color:#334137">
+        <div class="container" style="width:100%; background-color:#334137">
           <form method="POST" style="vcenter">
                 <img src="{{ url_for('static', filename='img/codemon.png') }}" style="width:300px; padding: 10px 10px 20px 10px">
                 <!--<div class="vcenter">-->
@@ -19,19 +19,21 @@
                 <!--<input type="text" style="width:10em;float:right;border-radius:10px;">-->
                 <!--</div>-->
             </form>
-      </div>
-        <a href="/problems">Solve More Problems</a>
-        <img src="{{ url_for('static', filename='img/z.jpg') }}">
-        <div class="container" style="padding-top:1em; width:70%">
-          
-        <font size="7em">
-            <ul class="nav nav-pills">
-                <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-                <li><a data-toggle="pill" href="#menu1">Webmon</a></li>
-                <li><a data-toggle="pill" href="#menu2">Pythomon</a></li>
-                <li><a data-toggle="pill" href="#menu3">Andromon</a></li>
-            </ul>
-        </font>
+        </div>
+        <div class="container">
+            <a href="/problems">Solve More Problems</a>
+            <img src="{{ url_for('static', filename='img/z.jpg') }}">
+            <div class="container" style="padding-top:1em; width:70%">
+              
+            <font size="7em">
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+                    <li><a data-toggle="pill" href="#menu1">Webmon</a></li>
+                    <li><a data-toggle="pill" href="#menu2">Pythomon</a></li>
+                    <li><a data-toggle="pill" href="#menu3">Andromon</a></li>
+                </ul>
+            </font>
+        </div>
         <font size="5">
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
