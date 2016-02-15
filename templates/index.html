@@ -3,14 +3,11 @@
     <head>
         <title>codémon</title>
       	<link rel="icon" type="image/vnd.microsoft.icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
-        <!--lol bootstrap stuff-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-        <meta name="google-signin-scope" content="profile email">
-        <meta name="google-signin-client_id" content="1012183044219-5fivc2m4ski5drr3dck56rrar5iaq4tf.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
@@ -35,27 +32,6 @@
             </p>
             <div>
               <script>
-                function onSignIn(googleUser) {
-                    // Useful data for your client-side scripts:
-                    var profile = googleUser.getBasicProfile();
-                    $.ajax({
-                        url: '/_login',
-                        type: 'POST',
-                        data:JSON.stringify({
-                            "id": "g"+profile.getId(),
-                            "username": profile.getName()
-                            }),        
-                            contentType: 'application/json;charset=UTF-8',
-                    });
-                    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-                    console.log("Name: " + profile.getName());
-                    console.log("Image URL: " + profile.getImageUrl());
-                    console.log("Email: " + profile.getEmail());
-            
-                    // The ID token you need to pass to your backend:
-                    var id_token = googleUser.getAuthResponse().id_token;
-                    console.log("ID Token: " + id_token);
-                  };
                 window.fbAsyncInit = function() {
                   FB.init({
                     appId      : '172310886472724',
@@ -136,9 +112,7 @@
           //Called when you login
           function testAPI() {
             FB.api('/me', function(response) {
-              console.log(response.id)
-              console.log(response)
-                // alert(''+response.name);
+              console.log("logged in as " + response.id)
               $.ajax({
                   url: '/_login',
                   type: 'POST',
@@ -152,16 +126,13 @@
             });
           }
             </script>
-            <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button size:"xlarge"> -->
             <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
             <div id="fbstatus"></div>
             <p></p>
-            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             </div>
           </div>
         </div>
       </div>
         
-        <!--hackerrank|966669-629|26c276f498788390b13ae4e038a6569325c2f623-->
     </body>
 </html>
