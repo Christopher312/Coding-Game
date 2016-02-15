@@ -13,67 +13,53 @@
     <body>
       <div class="container" style="width:100%; background-color:#334137">
           <form method="POST" style="vcenter">
-                <img src="../static/img/codemon.png" style="width:300px; padding: 10px 10px 20px 10px">
+                <img src="{{ url_for('static', filename='img/codemon.png') }}" style="width:300px; padding: 10px 10px 20px 10px">
                 <!--<div class="vcenter">-->
                 <!--<input type="submit" valbootstrap-theme.min.cssue="Search" style="float:right;border-radius:10px;">-->
                 <!--<input type="text" style="width:10em;float:right;border-radius:10px;">-->
                 <!--</div>-->
             </form>
       </div>
+        <a href="problems.html">Solve More Problems</a>
+       <img id="img0" src="{{ url_for('static', filename='img/z.jpg') }}">
 
         <div class="container" style="padding-top:1em; width:70%">
           
         <font size="7em">
-          <ul class="nav nav-pills">
-            <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-            <li><a data-toggle="pill" href="#menu1">Webmon</a></li>
-            <li><a data-toggle="pill" href="#menu2">Pythomon</a></li>
-            <li><a data-toggle="pill" href="#menu3">Andromon</a></li>
-          </ul>
+            <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+                <li><a data-toggle="pill" href="#menu1">Webmon</a></li>
+                <li><a data-toggle="pill" href="#menu2">Pythomon</a></li>
+                <li><a data-toggle="pill" href="#menu3">Andromon</a></li>
+            </ul>
         </font>
         <font size="5">
-          <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-              <h3>Home</h3>
-              <p>Solve coding problems to evolve your Codemon!</p>
-              	<!--<a href="problems.html">Solve More Problems</a>-->
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3>Home</h3>
+                    <p>Solve coding problems to evolve your Codemon!</p>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3>Web Codemon</h3>
+                    <img id="img0" src="../static/img/z">
+                    <p id="exp0"></p>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Python Codemon</h3>
+                    <img id="img1" src="../static/img/z">
+                    <p id="exp1"></p>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <h3>Mobile Codemon</h3>
+                    <img id="img2" src="../static/img/d">
+                    <p id="exp2"></p>
+                </div>
+                    <p id = "exp-p">
+                      {{exp}}
+                    </p>
+                </div>
             </div>
-            <div id="menu1" class="tab-pane fade">
-              <h3>Web Codemon</h3>
-    	       <img id="img0" src="../static/img/z">
-    	<a href="problems.html">Solve More Problems</a>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <h3>Python Codemon</h3>
-               <img id="img1" src="../static/img/z">
-    	<a href="problems.html">Solve More Problems</a>
-            </div>
-            <div id="menu3" class="tab-pane fade">
-              <h3>Mobile Codemon</h3>
-               <img id="img2" src="../static/img/d">
-                   	<a href="problems.html">Solve More Problems</a>
-    	       <img id="img0" src="{{ url_for('static', filename='img/z.jpg') }}">
-                <p id="exp0"></p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <h3>Python Codemon</h3>
-               <img id="img1" src="{{ url_for('static', filename='img/z.jpg') }}">
-                <p id="exp1"></p>
-            </div>
-            <div id="menu3" class="tab-pane fade">
-              <h3>Mobile Codemon</h3>
-               <img id="img2" src="{{ url_for('static', filename='img/z.jpg') }}">
-                <p id="exp2"></p>
-            </div>
-            <p id = "exp-p">
-                {{exp}}
-            </p>
-          </div>
-        </div>
-        
-        
-        
-
+        </font>
     	<script type="text/javascript">
             var exp = $("#exp-p").text()
             console.log(exp)
@@ -124,10 +110,5 @@
     	        document.getElementById("exp2").innerHTML="Level 2";
     	    }
     	</script>
-    	
-    
-
-
-</font>
-</body>
+    </body>
 </html>
