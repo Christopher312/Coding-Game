@@ -111,6 +111,8 @@
                 contentType: 'application/json;charset=UTF-8',
             });
             $('#fbstatus').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+            location.reload();
+            window.location.replace("/home");
           });
         }
       </script>
