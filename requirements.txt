@@ -8,7 +8,7 @@ checkbox-ng==0.3
 checkbox-support==0.2
 feedparser==5.1.3
 gunicorn==19.4.5
-html5lib==0.999
+html5lib==0.99999999
 httplib2==0.8
 itsdangerous==0.24
 lxml==3.3.3
